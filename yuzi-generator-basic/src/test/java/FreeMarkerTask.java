@@ -21,7 +21,8 @@ public class FreeMarkerTask {
         cfg.setDirectoryForTemplateLoading(new File("src/main/resources/templates"));
 
         cfg.setDefaultEncoding("UTF-8");
-
+        //解决数字分隔符问题
+        cfg.setNumberFormat("0.######");
         //创建模板对象，加载指定模板
         Template template = cfg.getTemplate("myweb.html.ftl");
 
