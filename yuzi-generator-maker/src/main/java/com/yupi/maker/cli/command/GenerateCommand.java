@@ -1,8 +1,8 @@
-package com.yupi.cli.command;
+package com.yupi.maker.cli.command;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.yupi.generator.MainGenerator;
-import com.yupi.model.MainTemplateConfig;
+import com.yupi.maker.generator.file.FileGenerator;
+import com.yupi.maker.model.DataModel;
 import freemarker.template.TemplateException;
 import lombok.Data;
 import picocli.CommandLine;
@@ -23,10 +23,10 @@ public class GenerateCommand implements Runnable{
 
     @Override
     public void run(){
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        BeanUtil.copyProperties(this, mainTemplateConfig);
+        DataModel dataModel = new DataModel();
+        BeanUtil.copyProperties(this, dataModel);
         try {
-            MainGenerator.doGenerate(mainTemplateConfig);
+            FileGenerator.doGenerate(dataModel);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (TemplateException e) {
