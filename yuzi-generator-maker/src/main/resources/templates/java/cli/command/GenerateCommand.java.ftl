@@ -1,6 +1,4 @@
-package templates.java.generator;
-
-{basePackage}.cli.command;
+package ${basePackage}.cli.command;
 
 import cn.hutool.core.bean.BeanUtil;
 import ${basePackage}.generator.MainGenerator;

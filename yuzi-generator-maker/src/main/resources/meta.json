@@ -1,9 +1,9 @@
 {
   "name": "acm-template-pro-generator",
   "description": "ACM 示例模板生成器",
-  "basePackage": "com.yupi",
+  "basePackage": "com.lu",
   "version": "1.0",
-  "author": "polaris",
+  "author": "lukaku",
   "createTime": "2023-2-4",
   "fileConfig": {
     "inputRootPath": "/Users/yupi/Code/yuzi-generator/yuzi-generator-demo-projects/acm-template-pro",
@@ -43,7 +43,7 @@
         "fieldName": "author",
         "type": "String",
         "description": "作者注释",
-        "defaultValue": "yupi",
+        "defaultValue": "lukaku",
         "abbr": "a"
       },
       {

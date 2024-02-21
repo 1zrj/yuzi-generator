@@ -15,7 +15,7 @@ public class DynamicGenerator {
         String projectPath = System.getProperty("user.dir");
         System.out.println(projectPath);
         String inputPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
-        String outputPath = projectPath + File.separator + "MainTemplate.java";
+        String outputPath = projectPath + File.separator + "/MainTemplate.java";
         System.out.println(outputPath);
         //创建数据模型
         MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();

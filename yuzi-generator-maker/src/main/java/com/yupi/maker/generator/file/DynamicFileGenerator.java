@@ -1,5 +1,6 @@
 package com.yupi.maker.generator.file;
 
+import cn.hutool.core.io.FileUtil;
 import com.yupi.maker.model.DataModel;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -21,7 +22,6 @@ public class DynamicFileGenerator {
         File templateDir = new File(inputPath).getParentFile();
         cfg.setDirectoryForTemplateLoading(templateDir);
 
-
         cfg.setDefaultEncoding("UTF-8");
         //解决数字分隔符问题
         cfg.setNumberFormat("0.######");
@@ -29,11 +29,14 @@ public class DynamicFileGenerator {
         String templateName = new File(inputPath).getName();
 
         Template template = cfg.getTemplate(templateName);
-        // 解决中文乱码问题
-        template = cfg.getTemplate(templateName,"utf-8");
+
+        // 文件不存在则创建文件和父目录
+        if (!FileUtil.exist(outputPath)) {
+            FileUtil.touch(outputPath);
+        }
 
         //生成
-        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(Files.newOutputStream(Paths.get(outputPath)), StandardCharsets.UTF_8));
+        Writer out = new FileWriter(outputPath);
         template.process(model, out);
         out.close();
     }

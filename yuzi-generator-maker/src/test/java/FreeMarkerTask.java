@@ -45,4 +45,13 @@ public class FreeMarkerTask {
 
         out.close();
     }
+
+    @Test
+    public void testFile() throws IOException {
+      Writer out = new FileWriter("H:\\code\\yuzi-generator\\yuzi-generator-maker\\generated\\acm-template-pro-generator\\model\\DataModel.java");
+//        File file = new File("file.txt");
+//        if (!file.canWrite()) {
+//            System.out.println("File is not writable");
+//        }
+    }
 }
