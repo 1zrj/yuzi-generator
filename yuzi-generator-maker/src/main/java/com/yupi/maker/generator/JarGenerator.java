@@ -33,6 +33,6 @@ public class JarGenerator {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        doGenerate("H:\\code\\yuzi-generator\\yuzi-generator-maker\\generated\\acm-template-pro-generator");
+        doGenerate("E:\\code2\\yuzi-generator\\yuzi-generator-maker\\generated\\acm-template-pro-generator");
     }
 }
